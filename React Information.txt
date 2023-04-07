@@ -1,0 +1,145 @@
+For React Js
+
+https://www.w3schools.com/js/DEFAULT.asp
+
+mdn javascript
+
+https://javascript.info/
+
+https://reactjs.org/docs/getting-started.html
+
+react dev tool download (To monitor parent and child components)
+
+important points
+----------------
+
+node --version
+npm --version
+
+Create React App
+----------------
+npx create-react-app my-app
+
+cd my-app
+npm start
+
+react, react-dom & react-scripts important files.
+
+package.json
+node-modules
+
+public & source are internally linked.
+
+index.html
+index.js  	they are internally linked
+
+React. Strictmode 
+
+components are parent-child relationships
+
+whole UI is parent component
+
+Example like Sales and Traffic is child components.
+
+without writing class is a concept of hooks.
+
+React developers tools chrome is extension is required.
+
+component name first letter is capital.
+
+Know about how to import specific componenet.
+
+React Component
+---------------
+
+function Home() {
+
+	return <h1> Hello I am function based component </h1>
+}
+
+class sales extends React.Component {
+
+	render() {
+
+		return <h1> Hello I am class Based component </h1>
+
+	}
+}
+
+
+JSX --> called mixed code (HTML + Java Script )
+
+//const element= 'I am Working '
+const element =<h1> Hello, World! </h1>;
+console.log(element)
+
+To complie JSX code we need babel JS complier
+	To simply translates JSX to JS
+
+Day-1
+----------
+
+	1. Creating new react App
+	2. Hello World
+	3. Using JSX  & Rendering Elements
+	4. Components.
+Day-2
+----------
+
+props and state
+
+props  - properties 
+-------------------
+
+used to pass data into your components
+==> From parent to child
+==> Not child to parent
+
+props drilling 
+
+fulx is the application architecture that facebook uses for building client-side web applications.
+
+==> fulx is a design pattern like MVC.
+
+Example like Welcome is parent and profile is child.
+
+State is a dynamic part of a react component.
+--------------------------------------------
+1. Initial State
+
+2. setState() - Change in state or Modify the state .
+
+Hooks through we achieving state concept.
+
+the question is how to handle the event in react.
+
+	java script events and react events has slightly difference.
+
+ 
+not-defined  
+un-defined
+
+the above two erros comes because of two reasons.
+
+1. Scope is missing.
+2. or you may not declared.
+
+for this issue use "this.state"
+
+
+Hooks
+-----
+
+1.Without writing the class is called Hooks.
+
+2.
+
+
+
+
+
+	
+
+
+
+

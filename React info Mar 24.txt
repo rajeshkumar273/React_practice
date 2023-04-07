@@ -1,0 +1,23 @@
+Module Content
+
+React Core Syntax & JSX
+
+Working with Componenets
+
+Working with Data
+
+
+npm inatall create-react-app
+
+npx create-react-app project-name
+
+npm start
+
+npx create-react-app Ojio
+
+Ojio>code . (it will open floder in visual studio) 
+
+
+package-json 67
+
+

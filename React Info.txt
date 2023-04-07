@@ -1,0 +1,959 @@
+npx create-react-app Ojio
+
+cd Ojio> 
+
+npm start
+
+rcc --> command in visual studio (class component default structure)
+
+
+rac --> command in visual studio (function component default structure)
+
+rafce --> for react arrow function export command. 
+
+we have extenstion called ES7 React/Redux/GraphQL
+
+
+
+import React,{Component} from 'react'
+
+export default class App extends Component {
+
+	state = {
+
+	   name: "Rajesh TechHub",
+	}
+	
+	render() {
+
+		return (
+
+		<div>
+			<h2> Welcome to React Js {this.state.name}</h2>
+		</div>
+
+	)
+}
+
+
+}
+
+The Best feature in class component is state management that's why most of the peopel till now using and react life cycle hooks concept they use.
+
+import React from 'react'
+
+const App =() => { //called arrow function
+	
+	return (
+
+	<div>
+	
+		<h2> Rajesh TechHub </h2>
+	</div>
+
+   )
+
+}
+
+export default App
+
+
+previous we stored some values in state like that here we going to use hooks concept. (usestate, useEffect)
+
+
+import React,{useState} from 'react'
+
+const App =() => { //called arrow function
+	
+	const [name,setName] = useState("Rajesh TechHub");
+
+	return (
+
+	<div>
+	
+		<h2> Welcome to {name} </h2>
+	</div>
+
+   )
+
+}
+
+export default App
+
+1.React Life cycles 
+2.state management
+
+The above two features are best in class component. Till that we are used only class component.
+
+
+After 16.8 Those who are used in class componenet that are tryied love functional component.
+
+Reason is React Hooks concept came into picture.
+
+In that React hooks we can use both 
+
+1. React Life cycle as well as state management.
+
+
+state and props in class componenet
+-----------------------------------
+
+App.js
+------
+
+
+import React,{Component} from 'react'
+import Display from '/.Display';
+
+
+export default class App extends Component {
+
+	state= {
+
+		name:"Rajesh TechHub"
+	}
+
+	render() {
+
+		return (
+
+
+			<div>
+
+				<center>
+
+					<h2>{this.state.name} </h2>
+					</Display name={this.state.name}>
+
+				</center>
+
+			</div>
+
+		)
+	}
+}
+
+
+Display.js
+----------
+
+import React,{Component} from 'react'
+
+export default class Display extends Component {
+
+	render() {
+
+		return (
+
+
+			<div> 
+		
+				<h2>I'm  from Display Component </h2>
+				<h2>Welcome to {this.props.name}</h2>
+
+			</div>
+
+		)
+
+	}
+}
+
+
+state means for initializing multiple variables and values 
+props means passing values from one component to another component.
+
+How to use CSS Styling in ReactJS
+---------------------------------
+
+import React from 'react';
+import './app.css
+
+const App = () => {
+
+	
+	const styling = {
+
+	color:"white",
+	backgroundColor:"skyblue",
+	textAlign:"center",
+	padding:"50px"
+	
+
+	
+
+
+	return (
+
+	<div className="container">
+		<h1> Welcome to Rajesh TechHub </h1>
+	</div>
+
+	<div style={{margin:"10px"}}>
+
+		<h2 style={{color:"white",backgroundColor:"lightgrey",textAlign:"center",padding:"50px"}}> Founder: Mothukuri Rajesh Kumar </h2> 
+	</div>
+
+	<div style={{margin:"10px"}}>
+
+		<h2 style={styling}> Contact for Admission: 90633 74806 </h2> 
+	</div>
+
+	)
+}
+
+export default App
+
+app.css
+-------
+
+h1 {
+	color:white;
+	background-color:lightgray;
+	padding: 50px;
+	text-align:center
+}
+
+.container{ 
+
+	margin:10px;
+}
+
+       
+
+useState Example
+---------------
+
+import React,{useState} from 'react';
+
+const App1 = () => {
+
+   // const [name,setName]= useState("TechHub");
+
+      const [count,setCount]=useState(0);
+
+    return (
+
+        
+         <div>
+            <center>
+                    <h1>{count}</h1>
+                    <button onClick={ () => setCount(count+1)}>Change</button>
+
+            </center>
+        </div>
+        )
+       
+}
+
+export default App1 ;
+
+
+Example 2
+---------
+
+import React,{useState} from 'react';
+
+const App1 = () => {
+
+   const [name,setName]= useState("TechHub");
+
+      //const [count,setCount]=useState(0);
+
+    return (
+
+      
+        <div>
+            <center>
+                <h1>{name}</h1>
+            <button onClick={() => setName("Rajesh's TechHub")}>Change</button>
+            </center>
+        </div>
+    )
+
+         
+
+        
+}
+
+export default App1 ;
+
+
+useEffect in ReactJs
+--------------------
+
+useEffect is one of the real time hook.
+
+useEffect is life cycle.
+import React,{useState,useEffect} from 'react';
+
+const UseEffect= () =>  {
+
+    const [count,setCount]=useState(0);
+    useEffect(() => console.log(count),[count])
+    return  (
+     <div>
+        <center>        
+        <p> you clicked {count} times</p>
+        <button onClick={() => setCount(count+1)}>Click</button>
+        </center>
+
+    </div>
+
+    );
+}
+
+export default UseEffect;
+
+onChange Event Handler in React Js
+----------------------------------
+
+The onChange event in React detects when the value of an input element changes.
+
+
+import React,{useState} from 'react';
+
+const EventHandler = () => {
+
+    const [user,setUser]=useState("");
+    const handler = e => {
+
+        setUser(e.target.value)
+    }
+    return (
+
+        <div>
+            <center>
+
+                <input type="text" placeholder="username" value={user} name="user" onChange={handler} /> <br></br>
+                {user}
+
+            </center>
+        </div>
+    )
+
+}
+
+export default EventHandler;
+
+
+onSubmit Handler in React js
+----------------------------
+
+Here we have to know, useState,Destructuring
+
+import React, {useState} from 'react';
+
+function OnSubmitDemo() {
+
+    const [data,setData] = useState({
+        username:'',
+        password:'',
+    })
+
+    const {username,password}=data;
+    const onChange = e => {
+
+        setData({...data,[e.target.name]:[e.target.value]})
+    }
+
+    const submitHandler = e => {
+        e.preventDefault();
+        console.log(data);
+    }
+
+    return (
+
+        <div>
+            <center>
+            <form onSubmit={submitHandler}>
+
+                <input type="text" name="username" value={username} 
+                onChange={onChange} placeholder="Username" /> <br/>
+
+                <input type="password" name="password" value={password} 
+                onChange={onChange} placeholder="Password" /> <br/>
+
+                <input type="submit" name="submit" />
+
+            </form>
+
+            </center>
+        </div>
+    );
+}
+
+export default OnSubmitDemo;
+
+
+Map function in ReactJS
+-----------------------
+
+Syntax of Map function:
+-----------------------
+
+
+array.map( 
+
+	(value,index) => <li> {value} </li>
+
+	)
+
+
+import React from 'react';
+
+function Map() {
+
+   // const arr= ["React Js","Node Js","Express Js","Angular Js"] 
+
+   const arr=[
+
+    {
+        id:1,
+        title:"React Js"
+    },
+
+    {
+        id:2,
+        title:"Node Js"
+    },
+
+    {
+        id:3,
+        title:"Express Js"
+    },
+
+    {
+        id:4,
+        title:"Angualar Js"
+    },
+
+    {
+        id:5,
+        title:"Rajesh TechHub"
+    },
+
+
+   ]
+
+    return (
+
+        <div>
+            {
+                arr.map(
+
+                    //(value,index) => <li key={index}>{value}</li>
+                    (value) => <li key={value.id}>{value.title}</li>
+                )
+            }
+        </div>
+
+    );
+}
+
+export default Map;
+
+How to use array filter in React Js
+-----------------------------------
+The filter function offers you the capability to filter a list of objects.
+
+Example: You have an array of people and only want to keep people older than forty.
+
+
+Syntax:
+-------
+array.filter(
+	(varible) => condition..)
+
+	)
+
+Example 1
+--------
+
+import React from 'react';
+
+function Filter() {
+
+    const names =['John','James','Paul','Ringo','George']
+
+    const filtered=names.filter(name =>name.includes('J'))
+
+    return (
+        <div>
+        <center>
+            {
+            filtered.map(item => <li>{item}</li>)
+        }
+        
+        </center>
+        </div>
+    );
+
+
+}
+
+export default Filter;
+
+
+Example - 2:
+-----------
+
+import React from 'react';
+
+function Filter() {
+
+    const names =['John','James','Paul','Ringo','George']
+    const arr=[10,20,30,40,50,60,70]
+    const filtered=names.filter(name =>name.includes('J'))
+    const arrFiltered=arr.filter(number => number>40)
+    return (
+        <div>
+        <center>
+            {
+            filtered.map(item => <li>{item}</li>)   
+        }
+        
+        {
+            arrFiltered.map(number =><li>{number}</li>)
+        }
+        </center>
+        </div>
+    );
+
+
+}
+
+export default Filter;
+
+Difference blw Export and Export Default
+----------------------------------------
+
+
+export --> import {Component}
+
+export default --> import Component
+
+
+with using export we have follow this type of import
+----------------------------------------------------
+
+import {Header} from './components/Header;
+
+with using Export Default we have to follow this type of import
+---------------------------------------------------------------
+
+import Footer from './componenets/Footer';
+
+
+How to Create Login Form with React
+-----------------------------------
+
+Prerequisite concepts
+---------------------
+
+1. onClick, onChange & onSubmit
+
+2.useState() - React Hook
+
+3.Object destructuring
+
+Here Some causes are pending due to concept unclearance.
+
+
+How to Get API Data using Fetch API in Reactjs
+----------------------------------------------
+
+import React,{useEffect} from 'react'
+
+export const FetchAPI = () => {
+
+    useEffect( () => {
+
+        fetch('https://jsonplaceholder.typicode.com/todos').then(
+            res => res.json()    
+        ).then(json => console.log(json))
+     
+    },[])
+
+    return (
+        <div> 
+            Hello World!!
+        </div>
+    )
+}
+
+Getting only Title
+------------------
+
+import React,{useEffect,useState} from 'react'
+
+export const FetchAPI = () => {
+    const [data,setData]=useState([]);
+    useEffect( () => {
+
+        fetch('https://jsonplaceholder.typicode.com/todos').then(
+            response => response.json()    
+        ).then(json => setData(json))
+     
+    },[])
+
+    return (
+        <div> 
+            {data.map(item => <li key={item.id}>{item.title}</li>)}
+        </div>
+    )
+}
+
+
+To intall Axios Library
+-----------------------
+
+npm install axios
+
+
+Example 1:
+----------
+import React, {useEffect,useState} from 'react';
+import axios from 'axios';
+
+export const AxiosLibrary = () => {
+
+    useEffect(() => {
+
+        axios.get("https://jsonplaceholder.typicode.com/todos").then(
+            response => console.log(response.data)
+        )
+    },[])
+
+    return (
+        <div>
+            <center>
+                <h1>Rajesh MRK</h1>
+            </center>
+
+        </div>
+    )
+} 
+
+Example 2:
+----------
+
+import React, {useEffect,useState} from 'react';
+import axios from 'axios';
+
+export const AxiosLibrary = () => {
+    const [data,setData]=useState([]);
+    useEffect(() => {
+
+        axios.get("https://jsonplaceholder.typicode.com/todos").then(
+            response => setData(response.data)
+        )
+    },[])
+
+    return (
+        <div>
+           
+                <h1>Rajesh MRK</h1>
+                {data.map(item => <li key={item.id}>{item.title}</li>)}
+      
+        </div>
+    )
+}         
+
+
+To install React Router
+-----------------------
+This is useful whenever you are developing multi page application.
+
+
+npm install react-router-dom
+
+components to use
+-----------------
+
+import {BrowserRouter,Switch,Route}
+
+import {Link}
+
+Syntax:
+-------
+
+<BrowserRouter>
+
+	<Switch>
+	 
+		<Route path="/" exact component ={Name} />  Here:     "/" means exact home page and component name is home
+		
+		...............................
+	
+		<Route path="/*" exact component ={*} />    Here:  "*" Means that particular component name like aboutPage,
+	</Switch>
+
+</BrowserRouter>
+
+
+
+
+what are major difference blw React 5 VS React 6
+
+react-router-dom
+----------------
+
+one is switch concept:
+----------------------
+import Navbar from './components/Navbar';
+import {BrowserRouter,Route,Routes} from 'react-router-dom';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import About from './components/About';
+
+
+Navbar.js
+---------
+
+import React from 'react';
+import {Link} from 'react-router-dom';
+const Navbar = () => {
+
+    return (
+
+        <div>
+         
+            <ul>     
+               <Link to="/"><li>Home</li></Link>
+               <Link to="/dashboard"><li>Dashboard</li></Link>
+               <Link to="/about"><li>About</li></Link>
+            </ul>
+           
+       
+        </div>
+    )
+}
+
+export default Navbar;
+
+home.js
+-------
+import React,{useState} from 'react';
+import {Navigate} from 'react-router-dom';
+
+const Home = () => {
+
+  const [auth,setAuth] =useState(false);
+  if(auth){
+
+    return <Navigate to='/dashboard'/>
+  }
+  return (
+    <div>
+      <center>
+      <h1> Welcome to Home Page!!</h1>
+      <button onClick={() => setAuth(true)}>Login</button>
+      </center>
+    </div>
+  )
+}
+
+export default Home
+
+Dashboard.js
+-----------
+import React from 'react'
+
+const Dashboard = () => {
+  return (
+    <div>
+    <center>
+      <h1> Displaying Dashboard Content.!!</h1>
+      </center>
+    </div>
+  )
+}
+
+export default Dashboard
+
+About.js
+--------
+
+import React from 'react'
+
+const About = () => {
+  return (
+    <div>
+    <center>
+      <h1> Welcome to About Page.!!</h1>
+    </center>
+    </div>
+  )
+}
+
+export default About
+
+App.js
+------
+ <BrowserRouter>
+        <Navbar />
+            <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="/dashboard" element={<Dashboard></Dashboard>} />
+              <Route path="/about" element={<About/>}/>
+           </Routes>
+ </BrowserRouter>
+
+
+
+second one is Redirect i.e., Navigate to
+----------------------------------------
+
+example is 
+----------
+
+
+
+import React,{useState} from 'react';
+import {Navigate} from 'react-router-dom';
+
+const Home = () => {
+
+  const [auth,setAuth] =useState(false);
+  if(auth){
+
+    return <Navigate to='/dashboard'/>
+  }
+  return (
+    <div>
+      <center>
+      <h1> Welcome to Home Page!!</h1>
+      <button onClick={() => setAuth(true)}>Login</button>
+      </center>
+    </div>
+  )
+}
+
+export default Home
+
+useHistory Hook in React Js  version 5 or useNavigate in React Js Version 6
+---------------------------------------------------------------------------
+
+React Hook "useHistory" connot be called in a class component. React Hooks must be called in React function component or a custome React Hook function/ 
+
+this is used for redirect from one component to another component or one page to another. (i.e., we are using Navigate to page can be used for both functional component and class component) 
+
+
+this useHistory Hook is only used in functional component
+
+
+version 6
+---------
+
+import { useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
+navigate('/about');
+
+import React from 'react'
+import {useNavigate} from 'react-router-dom';
+
+const Dashboard = () => {
+  let navigate=useNavigate();
+  return (
+    <div>
+    <center>
+      <h1> Displaying Dashboard Content.!!</h1>
+      <button onClick={() => navigate('/about')}>useNavigateToAboutPage</button>
+      </center>
+    </div>
+  )
+}
+
+export default Dashboard
+
+How to Use URL Parameters in ReactJs
+------------------------------------
+
+Path Params
+-----------
+
+<Route path="/profile/:name" component={Profile} />
+
+http://localhost:3000/profile/rajeshtechhub
+
+variabl/ --> name=rajeshtechhub
+
+Query Params
+------------
+
+<Route path="/profile" component={Profile} />
+
+http://localhost:3000/profile?name=rajeshtechhub
+
+variable--> name=rajeshtechhub
+
+
+
+Importing Audio & Video in React Js
+-----------------------------------
+
+class-based Component Lifecycle
+-------------------------------
+
+Side-effects in Functional Components: useEffect()
+
+componentDidMount() --> after return to perform any operation.
+
+componentDidUpdate() --> If you want add to cart in ecommerce website.
+
+componentWillUnmount() --> if you want to delete any kind of product.
+
+
+
+componentDidMount() --> called once component mounted    	useEffect(.....,[])
+			(was evaluated & rendered)
+
+
+componentDidUpdate() --> called once component updated 	 	useEffect(.., [someValue])
+
+componentWillUnmount() --> called right before component is 	useEffect(() => {return () => {....}}, [])
+			   unmounted (removed from DOM)
+
+npm install 'react-bootstrap';
+
+npm install '@material-ui/core';
+
+
+How to get and display data from JSON files using params
+---------------------------------------------------------
+
+Suppose we are in products page when we click on a particular products 
+then we should redirect to new page with that particular product details 
+( I want to access that particular product details on new page 
+(suppose a preview page), like that for all products in the same page (previw page) ).
+
+
+http://localhost:3000/task
+
+-> Learning React Js
+
+-> Learning Node Js
+
+-> Learning Express Js
+
+-> Learning MongoDB
+
+
+if We click on Learning React Js
+--------------------------------
+
+http://localhost:3000/reactjs
+
+->Learning ReactJs
+	-->Due date to complete
+	
+	-->Status
+
+Context
+-------
+
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+
+
