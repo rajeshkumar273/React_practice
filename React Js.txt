@@ -1,0 +1,220 @@
+if you want to set default browser in visual studio 
+--------------------------------------------------
+
+create .env.development 
+	---------BROWSER=chrome
+
+Go to Default Apps
+------------------
+
+<h1 className="heading1"> 
+
+
+Task To do CSSModule
+---------------------
+
+
+
+React component has three lifecycle methods.
+
+1. Mounting (Putting elements into the DOM) Displays output is called mounting
+2. Updating (When component is updated)
+3. Unmounting (when component is removed from the DOM) Removing one page and replace another page is called Unmounting.
+
+1) Mounting has the below order of execution
+
+1. constructor() --> optional
+2.getDerivedStateFromProps() --> optional
+3.render() -->Mandatory
+4.componentDidMount() --> optional
+
+Updating has the below order of execution.
+------------------------------------------
+
+1.getDerivedStateFromProps() --> optional
+
+2.shouldComponentUpdate() -->optional
+
+3.render() -->Mandatory
+
+4.getSnapshotBeforeUpdate()-->optional
+
+5.componentDidUpdate() -->optional
+
+iii) Unmounting will run the below lifecycle method.
+
+1.componentWillUnmount()
+
+
+Event Handling
+--------------
+
+When User perfoms any action, it should be considered as an event.
+
+onClick button, onChange dropdown values, onCheck checkbox etc.,
+
+
+
+Routing
+-------
+
+install react-router-dom package.
+
+install Bootstrap and import in index.css file
+
+npm i bootstrap@next
+
+Routing means simply navigating from one URL to another URL without refreshing the application every time.
+
+
+Primary Components:
+
+1) routers, like <BrowserRouter> and <HashRouter>
+
+2) route matchers, like <Route> and <Switch>
+
+3) navigation, like <Link>, <NavLink>, and <Redirect>
+
+All of the components that you use in a web application should be imported from react-router-dom
+
+
+react-router-dom (for web)
+
+react-router-native (for mobile)
+
+
+ {/* <First></First>
+      <CssModule />
+     <Login />
+  */}
+
+
+
+{/* import './App.css';
+import First from './components/first';
+import CssModule from './components/CSSModule';
+import Login from './components/Login'
+
+*/}
+
+
+
+
+Events:
+-------
+
+Adding Events
+React events are written in camelCase syntax:
+
+onClick instead of onclick.
+
+React event handlers are written inside curly braces:
+
+onClick={shoot}  instead of onClick="shoot()".
+
+
+
+
+
+#1. Object Destructuring
+--------------------
+
+let user ={
+
+	usernaem:"Rajesh",
+	age:20,
+	getName() {
+
+		return 5;
+	}
+
+};
+
+let {username:profileName,age,getName }=user;
+
+console.log(profileName}
+console.log(age);
+console.log(getName());
+
+#2. Array De-Structuring
+------------------------
+
+let user =[
+	"venkatesh",
+	20,
+	function getName() {
+		return 5;
+	},
+
+];
+
+let [username,age,getName]=user;
+console.log(username);
+console.log(age);
+console.log(getName());
+
+
+Rules of Hooks
+-------------
+
+Hooks are JavaScript functions, but they impose two additional rules;
+
+1. Only call Hooks at the top level. Don't call Hooks inside loops, conditions, or nested functions.
+
+2. Only call Hooks from React function componenets. Don't call Hooks from regualr javascript functions.
+
+one other valid place to call Hooks- your own custom Hooks.
+
+
+
+Basic Hooks:
+
+useState, useEffect, useContext,customHooks
+
+Additional Hooks:
+
+useReducer,
+useMemo,
+useCallback,
+useRef,
+useImperativeHandle,
+useLayoutEffect,
+useDebugValue
+Summary.	
+
+
+useEffect, adds the ability to perform side effects from a function component.
+
+
+By default, React runs the effects after every render - including the first render.
+
+Just like with useState, you can use more than a single effect in a component.
+
+
+Custom Hooks are more of a convention than a feature. If afunction's name starts with "use" and it calls other Hooks, we say it is a custom Hook.
+
+
+
+In HTML, form data is usually handled by the DOM.
+
+In React, form data is usually handled by the components.
+
+We can use the useState Hook to keep track of each inputs value and provide a "single source of truth" for the entire application.
+
+
+
+Using memo will cause React to skip rendering a component if its props have not changed.
+
+This can improve performance.
+
+
+Note: In JSX, JavaScript expressions are written inside curly braces, and since JavaScript objects also use curly braces, the styling in the example above is written inside two sets of curly braces {{}}.
+
+Two styling options
+-------------------
+
+
+
+
+
+
