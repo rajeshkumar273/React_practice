@@ -1,0 +1,460 @@
+
+
+
+
+					Welcome To  React !!!
+
+
+
+			Content :
+
+
+			Duration :  1 Days
+
+				   
+				     2 hr        30 mins      1 hr
+				  3.00 - 5.00     BR     5.30 - 6.30 (IST)
+
+			Pre-requisites:  HTML , CSS , Java Script , Bootstrap , (Node JS)
+
+
+
+
+
+
+
+TOPICS:
+React Introduction
+Why React ?
+create a react project
+folder structure
+LAB- HelloWorld  using React
+
+component in React
+Types of component
+create class component
+create functional component 
+LAB-create webpage with React
+
+Components and Props
+LAB-Props
+
+State and Events
+LAB-State
+
+Case Study
+
+
+
+
+
+
+#React Introduction
+
+	- React is a JavaScript library for building User Interfaces
+
+	  UI - user interface - any one can do it
+	  UX - How we will be up to the expectation of the customer
+
+        - Open source
+	- React will enhance the User Experience
+	- we can create SPA using React
+               - we can chnage the content dynamically 
+        - it is a tool to build UI component
+        - it is based on component based archiecture.
+
+
+              Html5 , CSS 3 , JS , Bootstrap 
+
+#Why React ?
+
+	- when we open a page in the browser , browser will create a DOM tree structure.
+	- real DOM implementation is slow in its real form.
+	- React will use Virtual DOM
+	- React will create Virtual DOM from real DOM , that is faster and more efficient to update.
+	- React Support Componenet Based Architecture
+	     - It will implement re-usability
+        - robust - ot can re-render with virtual dom
+	- It is smart enough to update a part of the page.
+	- increase performance
+
+
+#How we can create a project 
+
+        /> npm i node
+	/> node --version
+	/> npm --version
+
+	/> npm i  create-react-app  -g   // if we want to install for multiple application
+	/> create-react-app --version
+
+        /> create-react-app  myapp2
+
+	/> cd <project_name>
+
+	/> npm start    //run the project in the default port of 3000
+
+
+package.json  - it contain react metadata details (some script . dependencies)
+              - managed by npm
+	      - it is a configuration file.
+
+package-lock.json - auto generated file
+                  - maintained by npm
+
+.gitignore - any file or folder you want to ignore while pushing the code in the git remote server
+
+public - it contain public asset of the project
+
+src -  it contain 3 file with same name but different extension
+     - this 3 file will create our app.
+
+
+
+LAB :  hello world  using React
+
+#App.js
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+         <h1> Hello , welcome to React jS </h1>
+    </div>
+  );
+}
+
+export default App;
+
+
+http://localhost:3000/
+
+
+#component
+ - it is the main building block of React applicatin
+ - dont create the complete page , devide the complete page as small unit.
+ - and target to build these small small section 
+ - these are  called component.
+ - we are going to make our application more modular , managable and extendable.
+
+
+#Types of component
+	A. class based component - statefull component  ( state=data) - used to manage data
+		- not easy 
+
+	B. function component - stateless component - dont want to manage data
+		- easy 
+
+
+	from React 16.4 , we can manage data  using react Hook inside  function component 
+
+
+#Create class component
+- create a folder inside src with name componenets.
+
+Hello.js
+//class componnent
+import React , {Component} from 'react'
+
+class Hello extends Component{
+    render(){
+        return <h1> Hello Class Component</h1>
+    }
+}
+export default Hello;
+
+
+#App.js
+import './App.css';
+import Hello from './components/Hello'
+
+function App() {
+  return (
+    <div className="App">
+         
+         <Hello/>
+
+    </div>
+  );
+}
+export default App;
+------------------------------------------
+
+#Create function component
+
+#World.js
+//functional component
+
+// function World(){
+//         return <h1>World function componnet</h1>
+// }
+   const World =  ()  =>  <h1>World function component</h1>
+   export default World;
+
+
+#Apps.js
+import './App.css';
+import Hello from './components/Hello'
+import World from './components/World'
+
+function App() {
+  return (
+    <div className="App">
+         
+       <Hello/>
+       <World/>
+
+    </div>
+  );
+}
+export default App;
+
+--------------------------------------------
+#LAB-create webpage with React
+
+
+- Create Header.js ,
+		 Navbar.js , Sidepanel.js , Maincontent.js , Footer.js as functional component.
+	
+- https://getbootstrap.com/docs/4.6/getting-started/introduction/
+
+	componnents > navbar 
+
+
+#Navbar.js
+- copy the navbar inside return() 
+
+- install bootstrap
+
+	/> npm i bootstrap@4.6
+
+- start project
+        /> npm start
+
+- define the path of installed bootstrap inside index.js
+
+	import  '../node_modules/bootstrap/dist/css/bootstrap.css';
+	import  './index.css';
+		
+
+#Header.js
+- copy the jumbotron inside return
+
+#Sidepanel.js
+- copy the listbox inside return
+
+#Maincontent.js
+- copy the para inside return
+
+#Footer.js
+- copy the jumbotron inside return
+
+
+#Apps.js
+
+function App() {
+  return (
+    <div className="App">
+         
+      <Navbar/>
+      <Header/>
+      <div className="row">
+            <div className='col-md-3'>
+            <Sidepanel/>
+            </div>
+            <div className='col-md-9'>
+            <Maincontent/>
+            </div>
+      </div>
+      <Footer/>
+
+    </div>
+  );
+}
+
+export default App;
+
+-----------------------------------------------------
+
+#Props  and  State 
+
+	Props - properties - sending data from one component to another component
+			   - send the data from parent(Apps.js) to child(Person.js) and one direction only
+			   - to make the application dynamic we use props
+                                   
+        State - data - to maintain data inside the component
+
+Props            					 state
+- properties get passed to the component            - it is managed within the component
+
+
+#props ( deal with the data from one component to another component)
+-create on component 
+ Person.js
+
+    container componnent              component
+    Apps.js           ----------------->   Person.js
+				props
+
+
+#Apps.js
+import './App.css';
+import Person from './components/Person';
+
+function App() {
+  return (
+    <div className="container">
+         
+    <Person name="srini"/>
+    <Person name="arun"/>
+    <Person name="nikhil"/>
+
+    </div>
+  );
+}
+
+export default App;
+
+
+#Person.js
+const Person = (props) => {
+    return(
+        <div>
+            <h1>welcome To react props {props.name}</h1>
+        </div>
+    )
+}
+export default Person;
+
+
+
+# state (it is used to deal with the data inside the component)
+- class component - stateful
+
+
+
+#Hello.js
+class Hello extends Component{
+
+    constructor(props){
+        super(props)
+        this.state={
+            name:"Guest"
+        }
+    }
+
+    onClickHandler=()=>{
+        //this.state.name="srini"
+        this.setState({
+            name:'srini'
+        }
+        )
+    }
+      
+    render(){
+        return(
+            <div>
+                <h1>Welcome  {this.state.name}</h1>
+                <button onClick={this.onClickHandler}>Login</button>
+            </div>
+        )
+    }
+}
+
+export default Hello;
+
+
+
+
+#Apps.js
+
+import './App.css';
+import Hello from './components/Hello'
+
+function App() {
+  return (
+    <div className="Apps">
+         
+    <Hello/>
+
+    </div>
+  );
+}
+
+export default App;
+
+
+       ---------------------------------------------------------
+	Hands On : using React
+
+		Registration , Insert , Login , Changepassword
+
+	https://legacy.reactjs.org/docs/getting-started.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
