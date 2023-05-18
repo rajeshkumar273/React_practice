@@ -1,0 +1,8 @@
+spring cloud config dependency
+
+config server
+
+config client
+
+postman extension
+

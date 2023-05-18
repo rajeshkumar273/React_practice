@@ -6,7 +6,6 @@ npm start
 
 rcc --> command in visual studio (class component default structure)
 
-
 rac --> command in visual studio (function component default structure)
 
 rafce --> for react arrow function export command. 
